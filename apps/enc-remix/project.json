@@ -1,0 +1,54 @@
+{
+  "root": "apps/enc-remix",
+  "sourceRoot": "apps/enc-remix",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/remix:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/enc-remix",
+        "outputPath": "dist/apps/enc-remix"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/remix:server",
+      "options": {
+        "buildTarget": "enc-remix:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "enc-remix:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/remix:export",
+      "options": {
+        "buildTarget": "enc-remix:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/enc-remix"],
+      "options": {
+        "jestConfig": "apps/enc-remix/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/enc-remix/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

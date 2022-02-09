@@ -1,0 +1,18 @@
+.button {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: coral;
+  cursor: pointer;
+  appearance: none;
+  transition: transform 250ms;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}

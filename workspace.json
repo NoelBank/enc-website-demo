@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "enc-next": "apps/enc-next",
+    "enc-remix": "apps/enc-remix",
+    "uikit": "libs/uikit"
+  }
+}
